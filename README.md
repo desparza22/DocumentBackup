@@ -1,5 +1,5 @@
 # DocumentBackup
-I am still working on the code for this program, but the basic idea behind the algorithm has been developed.
+I am currently working on a script for interacting with the program with a small scale of data to better understand its functionality.
 
 The Function:
 With a collection of separate chunks of information, which could take the form of a collection of documents or data centers for example, everything can be backed up collectively with minimal space requirements. 
@@ -7,7 +7,7 @@ This depends on the condition that the individual chunks of information, which w
 It also depends on the assumption that, once a chunk of information is corrupted, the rest of the collection can be produced for the process of recovering the information that was corrupted.
 
 The Process:
-The program uses an error correction algorithm that is often used to detect a flipped bit in a chunk of, say, 8 bytes, and flips it back. The general idea is to keep a bit representing the parity of the number of active bits in different sections of the 8 bytes, which collectively can be used to deduce which bit was corrupted. To take advantage of this algorithm, the program alternates the bits of information in the documents given to it. With 64 documents, if a document is corrupted, one bit in every 64 bits will be corrupted as well, which can be corrected with the method described.
+The program uses an error correction algorithm that is often used to detect a flipped bit in a chunk of bits. The general idea is to keep a bit representing the parity of the number of active bits in different sections of the chunk of bits. For example, one bit might track the overall parity, another might track the parity of every other bit, and yet another would track the parity of every other set of two bits. Collectively, these parity bits can be used to deduce which bit was corrupted. To take advantage of this algorithm, the program alternates the bits of information in the documents given to it. With 64 documents, if a document is corrupted, one bit in every 64 bits will be corrupted as well, which can be corrected with the method described.
 
 Performace:
 A collection of n bits, where n is a power of two, requires log(n) + 1 bits to detect a flipped bit. This means that a collection of n documents of equal length b bits will require b x (log(n) + 1) bits to encode. 
