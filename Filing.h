@@ -110,3 +110,4 @@ struct FileContents* init_FileContents(struct Array** _words, struct Array* _sec
 }
 
 #endif
+
