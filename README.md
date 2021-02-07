@@ -1,5 +1,5 @@
 # DocumentBackup
-I am currently working on a script for interacting with the program with a small scale of data to better understand its functionality.
+Run main.c to see the program restore information.  
 
 The Function:
 With a collection of separate chunks of information, which could take the form of a collection of documents or data centers for example, everything can be backed up collectively with minimal space requirements. 
